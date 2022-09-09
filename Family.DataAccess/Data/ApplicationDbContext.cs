@@ -1,7 +1,7 @@
-﻿using FamilyBudget.Models;
+﻿using Family.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FamilyBudget.Data
+namespace Family.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {

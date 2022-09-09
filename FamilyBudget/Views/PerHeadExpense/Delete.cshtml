@@ -1,0 +1,61 @@
+﻿@model PerHeadExpense
+
+<form method="post" asp-action="Delete">
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Person</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="MonthlyEarning"></label>
+            <input asp-for="MonthlyEarning" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MonthName"></label>
+            <input asp-for="MonthName" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Father"></label>
+            <input asp-for="Father" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Mother"></label>
+            <input asp-for="Mother" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Sister"></label>
+            <input asp-for="Sister" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Brother"></label>
+            <input asp-for="Brother" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Wife"></label>
+            <input asp-for="Wife" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Children"></label>
+            <input asp-for="Children" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="HouseRent"></label>
+            <input asp-for="HouseRent" disabled class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-Danger" style="width:150px">Delete</button>
+        <a asp-controller="PerHeadExpense" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

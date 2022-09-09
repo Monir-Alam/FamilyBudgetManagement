@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FamilyBudget.Models
+namespace Family.Models
 {
     public class PerHeadExpense
     {
@@ -22,7 +22,7 @@ namespace FamilyBudget.Models
         public Month MonthName { get; set; }
 
         public int PersonId { get; set; }
-        [ForeignKey("PersonInfo")]
+        [ForeignKey("PersonInfoId")]
         public PersonInfo PersonInfo { get; set; }
     }
 }

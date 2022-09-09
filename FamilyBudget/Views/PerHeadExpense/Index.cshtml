@@ -1,0 +1,88 @@
+﻿
+@model IEnumerable<PerHeadExpense>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Expense List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="PerHeadExpense" asp-action="Create" class="btn btn-Primary">
+            Create Expense
+            </a>
+        </div>
+    </div>
+
+
+<table id="tblData" class="table table-borderd table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Month</th>
+                <th>Monthly Earning</th>
+                <th>Father</th>
+                <th>Mother</th>
+                <th>Sister</th>
+                <th>Brother</th>
+                <th>Wife</th>
+                <th>Children</th>
+                <th>House Rent</th>
+        </tr>
+    </thead>
+
+    <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="10%">
+                        @obj.MonthName
+                    </td>
+                    <td width="10%">
+                        @obj.MonthlyEarning
+                    </td>
+                    <td width="10%">
+                        @obj.Father
+                    </td>
+                    <td width="10%">
+                        @obj.Mother
+                    </td>
+                    <td width="10%">
+                        @obj.Sister
+                    </td>
+                    <td width="10%">
+                        @obj.Brother
+                    </td>
+                    <td width="10%">
+                        @obj.Wife
+                    </td>
+                    <td width="10%">
+                        @obj.Children
+                    </td>
+                    <td width="10%">
+                        @obj.HouseRent
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="PerHeadExpense" asp-action="Edit" asp-route-id="@obj.Id">Update</a>
+                            <a asp-controller="PerHeadExpense" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+    </tbody>
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+

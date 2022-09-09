@@ -1,0 +1,36 @@
+﻿@model PersonInfo
+
+<form method="post" asp-action="Delete">
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Person</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DOB"></label>
+            <input asp-for="DOB" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Profession"></label>
+            <input asp-for="Profession" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="JobDescription"></label>
+            <input asp-for="JobDescription" disabled class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-Danger" style="width:150px">Delete</button>
+        <a asp-controller="PersonInfo" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

@@ -1,4 +1,4 @@
-﻿namespace FamilyBudget.Models
+﻿namespace Family.Models
 {
     public class Month
     {

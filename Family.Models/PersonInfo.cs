@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FamilyBudget.Models
+namespace Family.Models
 {
     public class PersonInfo
     {
