@@ -10,7 +10,6 @@ namespace Family.DataAccess
 
         }
         public DbSet<PersonInfo> PersonInfos { get; set; }
-        public DbSet<Month> Months { get; set; }
         public DbSet<PerHeadExpense> PerHeadExpenses { get; set; }
     }
 }

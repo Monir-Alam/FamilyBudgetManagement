@@ -15,14 +15,5 @@ namespace Family.Models
         public decimal Children { get; set; }
         public decimal HouseRent { get; set; }
         public decimal MonthlyEarning { get; set; }
-
-
-        public int MonthId { get; set; }
-        [ForeignKey("MonthId")]
-        public Month MonthName { get; set; }
-
-        public int PersonId { get; set; }
-        [ForeignKey("PersonInfoId")]
-        public PersonInfo PersonInfo { get; set; }
     }
 }
