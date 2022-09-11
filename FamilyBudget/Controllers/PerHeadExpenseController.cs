@@ -85,13 +85,15 @@ namespace FamilyBudget.Controllers
                 return NotFound();
             }
 
-            var ExpenseFromDb = _db.PersonInfo.GetFirstOrDefault(u => u.Id == id);
+            var ExpenseFromDb = _db.PerHeadExpense.GetFirstOrDefault(u => u.Id == id);
             if (ExpenseFromDb == null)
             {
                 return NotFound();
             }
             return View(ExpenseFromDb);
         }
+
+
 
         //POST
         [HttpPost, ActionName("Delete")]
@@ -108,6 +110,8 @@ namespace FamilyBudget.Controllers
             _db.Save();
             return RedirectToAction("Index");
         }
+
+
 
     }
 }

@@ -7,6 +7,7 @@ namespace Family.Models
     {
         [Key]
         public int Id { get; set; }
+        public string MonthName { get; set; }
         public decimal Father { get; set; }
         public decimal Mother { get; set; }
         public decimal Sister { get; set; }

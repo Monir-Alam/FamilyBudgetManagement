@@ -28,12 +28,30 @@
             <input asp-for="DOB" class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <button type="submit" onclick="ValidateInput()" class="btn btn-primary" style="width:150px">Create</button>
         <a asp-controller="PersonInfo" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
 
 
     </div>
+</form>
 
+@section Scripts{
+    <script>
+        function ValidateInput(){
+            document.getElementById("upload"){
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Your work has been saved',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                 
+             
+            }
+         
+        }
+    </script>
+}
 
-
-
+           

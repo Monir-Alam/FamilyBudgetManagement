@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FamilyBudget.Migrations
+namespace Family.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220908192546_Initial")]
-    partial class Initial
+    [Migration("20220910184737_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,24 +24,7 @@ namespace FamilyBudget.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("FamilyBudget.Models.Month", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("MonthName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Months");
-                });
-
-            modelBuilder.Entity("FamilyBudget.Models.PerHeadExpense", b =>
+            modelBuilder.Entity("Family.Models.PerHeadExpense", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,20 +44,15 @@ namespace FamilyBudget.Migrations
                     b.Property<decimal>("HouseRent")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("MonthId")
-                        .HasColumnType("int");
+                    b.Property<string>("MonthName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("MonthlyEarning")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Mother")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PersonInfoId")
-                        .HasColumnType("int");
 
                     b.Property<decimal>("Sister")
                         .HasColumnType("decimal(18,2)");
@@ -84,14 +62,10 @@ namespace FamilyBudget.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MonthId");
-
-                    b.HasIndex("PersonInfoId");
-
                     b.ToTable("PerHeadExpenses");
                 });
 
-            modelBuilder.Entity("FamilyBudget.Models.PersonInfo", b =>
+            modelBuilder.Entity("Family.Models.PersonInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -117,25 +91,6 @@ namespace FamilyBudget.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PersonInfos");
-                });
-
-            modelBuilder.Entity("FamilyBudget.Models.PerHeadExpense", b =>
-                {
-                    b.HasOne("FamilyBudget.Models.Month", "MonthName")
-                        .WithMany()
-                        .HasForeignKey("MonthId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FamilyBudget.Models.PersonInfo", "PersonInfo")
-                        .WithMany()
-                        .HasForeignKey("PersonInfoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MonthName");
-
-                    b.Navigation("PersonInfo");
                 });
 #pragma warning restore 612, 618
         }

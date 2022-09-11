@@ -37,31 +37,31 @@
             @foreach (var obj in Model)
             {
                 <tr>
-                    <td width="10%">
+                    <td>
                         @obj.MonthName
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.MonthlyEarning
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.Father
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.Mother
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.Sister
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.Brother
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.Wife
                     </td>
-                    <td width="10%">
+                    <td >
                         @obj.Children
                     </td>
-                    <td width="10%">
+                    <td>
                         @obj.HouseRent
                     </td>
                     <td>
@@ -70,6 +70,7 @@
                             <a asp-controller="PerHeadExpense" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
 
                         </div>
+                        
                     </td>
                 </tr>
             }

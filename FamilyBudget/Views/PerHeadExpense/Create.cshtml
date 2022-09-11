@@ -9,14 +9,29 @@
         </div>
 
         <div class="mb-3">
-            <label asp-for="MonthlyEarning"></label>
-            <input asp-for="MonthlyEarning" class="form-control" />
+            <label asp-for="MonthName"></label>
+            @*<input asp-for="MonthName" class="form-control" />*@
+            <select name="MonthName" id="MonthName">
+                <option value="">--Select Month--</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
         </div>
 
         <div class="mb-3">
-            <label asp-for="MonthName"></label>
-            <input asp-for="MonthName" class="form-control" />
-        </div>
+            <label asp-for="MonthlyEarning"></label>
+            <input asp-for="MonthlyEarning" class="form-control" />
+        </div>   
 
         <div class="mb-3">
             <label asp-for="Father"></label>
